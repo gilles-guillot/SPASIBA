@@ -1,0 +1,8 @@
+## Next line required only if packages conatins a shared object (.so) file
+## useDynLib(SPASIBA)
+
+# Export all names
+exportPattern(".")
+
+
+import(RandomFields)
