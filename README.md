@@ -1,2 +1,2 @@
 # SPASIBA
-Continuous spatial assignment from genomics data
+Continuous spatial assignment of living organisms from genomics data
