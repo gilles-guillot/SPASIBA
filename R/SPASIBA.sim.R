@@ -1,4 +1,4 @@
-#'  Simulate data from the prior/likelihood model assumed in SPASIBA
+#' @title Simulate data from the prior/likelihood model assumed in SPASIBA
 #'  
 #' @param ploidy 1 or 2
 #' @param n.loc integer nuber of loci
@@ -48,6 +48,8 @@
 #'  \item coord.grid=coord: Coordinates of the regular grid at which simulation of 
 #' Gaussian fields and allele frequencies is performed
 #' }
+#' 
+#' @author Gilles Guillot
 #' 
 #' @export
 #' @examples

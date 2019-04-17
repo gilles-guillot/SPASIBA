@@ -1,3 +1,80 @@
+#' @title Inference, prediction for Continuous Spatial Assignment with INLA
+#' 
+#' 
+#' @param geno.ref: Matrix of allele counts of reference data. One row per population, one column per locus.
+#' @param ploidy: 1/2
+#' @param coord.ref: coordinates of reference sampling sites. One row per sampling site, two columns (cartesian or lon-lat)
+#' @param sphere: Logical (\code{TRUE} or \code{FALSE}) indicating whether samples are living on a sphere or a flat domain
+#' @param size.pop.ref: Matrix with one row per population and one column per locus giving 
+#' haploid population sample sizes of the various reference populations
+#' @param geno.unknown: Genotypes  of individuals of unknwon geographic origin. 
+#' One row per indivdual, one column per locus. This should contain allele counts of an 
+#' arbitrary reference allele at each locus (hence 0,1, 2 or NA)
+#' @param quant.ref: Matrix of quantitative covariates for reference individuals. One row per individual. Currently not implemented.
+#' @param quant.unknown: Matrix of quantitative covariates for individuals of unknwon geographic origin. Currently not implemented.
+#' @param make.inf: Logical (\code{TRUE} or \cite{FALSE}) indicating whether inference of covariance function (under the GMRF-SPDE model) should be carried out
+#' @param loc.infcov: Subset of loci to be used to carry out inference of covariance function (GMRF-SPDE model)
+#' @param kappa.geno.plug: Spatial scale parameter kappa of the hidden Gaussian random field 
+#' (if known from inference carried out with the present function earlier)
+#' @param tau.geno.plug: Precision (inverse of variance) of the hidden Gaussian random field 
+#' (if known from inference carried out earlier with the present function)
+#' @param window: A 2x2 matrix specifying the xmin, xmax, ymin, ymax of the rectangular window over which predicted allele frequencies 
+#' maps will be computed. As default, the smallest rectangular window with edges parrallel to the axes will be used.
+#' @param max.edge.mesh: Max length of an edge in triangulation for GMRF-SPDE model. Change default value only if you are familiar with 
+#' the triangulation function for the SPDE model in INLA. 
+#' @param offset.mesh: Offset in mesh for  GMRF-SPDE model. Change default value only if you are familiar with 
+#' the triangulation function for the SPDE model in INLA.
+
+#' @param marginal.quant: Distribution of quantitative variables (norm or lnorm). Currently not implemented. 
+#' @param make.pred: TRUE/FALSE indicating whether prediction of allele  frequencies should be carried out
+#' @param nx.pred: Number of pixels horizontally in allele frequencies prediction
+#' @param ny.pred: Number of pixels vertically in allele frequencies prediction
+#' @param make.assign: TRUE/FALSE indicating whether assignment of individuals of unknown origin should be made
+#' @param proj.predref: Projection of grid used in prediction (typically as returned by a previous call to the present function when make.pred=TRUE)
+#' @param freq.predref: Allele frequencies (returned by this function when make.pred=TRUE)  
+#' @param verbose.inf: TRUE if you want to get the \code{inla()}  blurb
+#' @param verbose.pred: TRUE if you want to get the \code{inla()} blurb
+#'
+#' @return A list with components below (some of them being only optionally returned). 
+#' The most important in the list returned are \code{ll} and \code{coord.unknown.est}. 
+#' \itemize{
+#' \item mesh.ref: An object of class \code{inla.mesh} containing info
+#'   about the mesh used under the inference of the GMRF-SPDE
+#'   parameters. See \code{?inla.mesh.2d} for details.
+#' \item cpu.used.infcov: CPU time used during the inference of the GMRF-SPDE
+#'   parameters.
+#' \item tau.geno.est: Precision (inverse of the variance) in the Matern
+#'   field involved in the GMRF-SPDE model
+#' \item kappa.geno.est: Scale parameter in the Matern
+#'   field involved in the GMRF-SPDE model
+#' \item make.inf: Logical (\code{TRUE} or \code{FALSE}) indicating
+#'   whether the last call to the present function requested to estimate
+#'   parameters of the GMRF-SPDE model.
+#' \item coord.pred: Coordinates of the regular grid at which allele
+#'   frequencies are predicted.
+#' \item mesh.predref: Mesh (an object of class \code{inla.mesh}) used
+#'   involved in the prediction of allele   frequencies. See \code{?inla.mesh.2d} for details.
+#' \item proj.predref: An object typically returned by
+#'   \code{inla.mesh.project} used to convert info between an irregular
+#'   trangulation and a regular grid. See   \code{?inla.mesh.projector} for details.
+#' \item u: The \code{x} component of a \code{proj.predref} object 
+#' \item v: The \code{y} component of a \code{proj.predref} object
+#' \item cpu.used.predfreq.perloc: CPU time spent computing allele
+#'   frequency maps
+#' \item freq.predref: An array with dimensions \code{(nx.pred,ny.pred,nloc)} containing
+#'   predicted frequency maps, with \code{(nx.pred,ny.pred)} dimension of the
+#'   grid, \code{nloc}: number of loci.
+#' \item ll: An array with dimensions \code{(nx.pred,ny.pred,n.unknown)}
+#'   containing the log-likelihood of each individual to have origin at the
+#'   various nodes of a regular grid. \code{(nx.pred,ny.pred)} dimension of the
+#'   grid, \code{n.unknown}: number of individuals of unknown origin.
+#' \item coord.unknown.est: The estimated geographic coordinates of the individuals.
+#' }
+#'
+#' @author Gilles Guillot
+#' @export
+#'
+#'
 SPASIBA.inf <-
 function (geno.ref, ploidy, coord.ref, sphere = FALSE, size.pop.ref, 
     geno.unknown, quant.ref = NULL, quant.unknown = NULL, make.inf = FALSE, 

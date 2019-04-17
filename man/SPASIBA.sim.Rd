@@ -98,3 +98,6 @@ dat <- SPASIBA.sim(ploidy=2,
                    )
                    summary(dat)
 }
+\author{
+Gilles Guillot
+}
