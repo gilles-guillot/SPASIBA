@@ -4,36 +4,16 @@ vers <- paste("R package version", desc$Version)
 
 citHeader("To cite package 'SPASIBA' in publications use:")
 
-citEntry(entry="Article",
-         author ="Some Authors",
-         title ="blablabla",
-         journal = "blablabla",
-         year =2014,
-         textVersion ="blablabla")
 
 
 citEntry(entry="Article",
-    	author = "H. Rue and S. Martino and N. Chopin",
-	title = "Approximate {B}ayesian inference for latent {G}aussian models by using 
-integrated nested {L}aplace approximations",
-	journal = "Journal of the Royal Statistical Society, series B",
-	year = 2009,
-	volume = 71,
-	number = 2,
-	pages = "1-35",
-         textVersion ="Rue, Martino, Chopin, Approximate Bayesian inference for latent Gaussian models by using 
-integrated nested Laplace approximations, JRSSB, 71, 1-35, 2009"  )
-
-
-
-citEntry(entry="Article",
-         author = 	 "Lindgren, F. and Rue, H. and Lindstr{\"o}m, E.",
-         title = 	 "An explicit link between {G}aussian fields and {G}aussian {M}arkov random fields: the stochastic partial differential equation approach",
-         journal = 	 "Journal of the Royal Statistical Society, series B",
-         year = 	 2011,
-         volume = 	 73,
-         number = 	 4,
-         pages = 	 "423-498",
-     textVersion ="Lindgren, Rue, Lindstr{\"o}m, An explicit link between Gaussian fields and Gaussian Markov random fields: the stochastic partial differential equation approach, JRSSB, 73, 2011" )
-
-
+  title={Accurate continuous geographic assignment from low-to high-density SNP data},
+  author={Guillot, Gilles and J{\'o}nsson, H{\'a}kon and Hinge, Antoine and Manchih, Nabil and Orlando, Ludovic},
+  journal={Bioinformatics},
+  volume={32},
+  number={7},
+  pages={1106--1108},
+  year={2015},
+  publisher={Oxford University Press},
+textversion = {Guillot, G., et al. "Accurate continuous geographic assignment 
+from low-to high-density SNP data." Bioinformatics 32.7 (2015): 1106-1108.})

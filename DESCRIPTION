@@ -1,6 +1,8 @@
 Package: SPASIBA
 Title: Continuous Spatial Assignment
-Description: Bayesian continuous spatial assignment of living organisms from SNP data.
+Description: Bayesian continuous spatial assignment of living organisms from SNP data. 
+  Method published as Guillot, G., et al. "Accurate continuous geographic assignment 
+  from low-to high-density SNP data." Bioinformatics 32.7 (2015): 1106-1108.
 Authors@R: person("Gilles","Guillot",role=c("aut","cre"),email="gilles.b.guillot@gmail.com")
 Maintainer: Gilles Guillot <gilles.b.guillot@gmail.com>
 License: GPL (>= 3)

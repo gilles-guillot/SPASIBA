@@ -74,7 +74,7 @@
 #' @author Gilles Guillot
 #' @export
 #'
-#'
+#' 
 SPASIBA.inf <-
 function (geno.ref, ploidy, coord.ref, sphere = FALSE, size.pop.ref, 
     geno.unknown, quant.ref = NULL, quant.unknown = NULL, make.inf = FALSE, 
