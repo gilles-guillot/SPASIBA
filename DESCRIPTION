@@ -10,7 +10,5 @@ Version: 0.0.3
 Depends: RandomFields
 Encoding: UTF-8
 RoxygenNote: 6.1.1
-Suggests: 
-    knitr,
-    rmarkdown
+Suggests: knitr, rmarkdown
 VignetteBuilder: knitr

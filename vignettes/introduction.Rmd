@@ -2,11 +2,13 @@
 title: "Introduction to R package SPASIBA"
 author: "Gilles Guillot"
 output:
- rmarkdown::html_vignette:
+  html_document:
+    highlight: kate
+    theme: united
     toc: true
 vignette: >
-  \VignetteIndexEntry{Introduction to R package SPASIBA}
-  \VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{Introduction to R package SPASIBA}
+  %\VignetteEngine{knitr::rmarkdown}
   \VignetteEncoding{UTF-8}
 ---
 
