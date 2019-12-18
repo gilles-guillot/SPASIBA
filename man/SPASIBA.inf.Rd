@@ -4,14 +4,32 @@
 \alias{SPASIBA.inf}
 \title{Inference, prediction for Continuous Spatial Assignment with INLA}
 \usage{
-SPASIBA.inf(geno.ref, ploidy, coord.ref, sphere = FALSE, size.pop.ref,
-  geno.unknown, quant.ref = NULL, quant.unknown = NULL,
-  make.inf = FALSE, loc.infcov = NULL, kappa.geno.plug = NULL,
-  tau.geno.plug = NULL, window = NULL, max.edge.mesh = NULL,
-  offset.mesh = -0.1, marginal.quant = "none", make.pred = FALSE,
-  nx.pred = 20, ny.pred = 20, make.assign = FALSE,
-  proj.predref = NULL, freq.predref = NULL, verbose.inf = TRUE,
-  verbose.pred = TRUE)
+SPASIBA.inf(
+  geno.ref,
+  ploidy,
+  coord.ref,
+  sphere = FALSE,
+  size.pop.ref,
+  geno.unknown,
+  quant.ref = NULL,
+  quant.unknown = NULL,
+  make.inf = FALSE,
+  loc.infcov = NULL,
+  kappa.geno.plug = NULL,
+  tau.geno.plug = NULL,
+  window = NULL,
+  max.edge.mesh = NULL,
+  offset.mesh = -0.1,
+  marginal.quant = "none",
+  make.pred = FALSE,
+  nx.pred = 20,
+  ny.pred = 20,
+  make.assign = FALSE,
+  proj.predref = NULL,
+  freq.predref = NULL,
+  verbose.inf = TRUE,
+  verbose.pred = TRUE
+)
 }
 \arguments{
 \item{geno.ref:}{Matrix of allele counts of reference data. One row per population, one column per locus.}

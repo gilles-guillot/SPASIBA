@@ -4,12 +4,28 @@
 \alias{SPASIBA.sim}
 \title{Simulate data from the prior/likelihood model assumed in SPASIBA}
 \usage{
-SPASIBA.sim(ploidy = 2, n.loc = 10, n.quant = 0, sphere = FALSE,
-  size.pop.ref, coloc.ref = FALSE, n.unknown, nx.grid, ny.grid, win,
-  kappa.geno = NULL, nu.geno = 1, sigma2.geno = NULL,
-  kappa.quant = NULL, nu.quant = 1, sigma2.gf.quant = NULL,
-  marginal.quant = "lnorm", tau.noise.quant = NULL, store.gf = FALSE,
-  obsolete = FALSE)
+SPASIBA.sim(
+  ploidy = 2,
+  n.loc = 10,
+  n.quant = 0,
+  sphere = FALSE,
+  size.pop.ref,
+  coloc.ref = FALSE,
+  n.unknown,
+  nx.grid,
+  ny.grid,
+  win,
+  kappa.geno = NULL,
+  nu.geno = 1,
+  sigma2.geno = NULL,
+  kappa.quant = NULL,
+  nu.quant = 1,
+  sigma2.gf.quant = NULL,
+  marginal.quant = "lnorm",
+  tau.noise.quant = NULL,
+  store.gf = FALSE,
+  obsolete = FALSE
+)
 }
 \arguments{
 \item{ploidy}{1 or 2}

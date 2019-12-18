@@ -3,12 +3,17 @@ Title: Continuous Spatial Assignment
 Description: Bayesian continuous spatial assignment of living organisms from SNP data. 
   Method published as Guillot, G., et al. "Accurate continuous geographic assignment 
   from low-to high-density SNP data." Bioinformatics 32.7 (2015): 1106-1108.
-Authors@R: person("Gilles","Guillot",role=c("aut","cre"),email="gilles.b.guillot@gmail.com")
+Authors@R: 
+ person(given = "Gilles",
+           family = "Guillot",
+           role = c("aut", "cre"),
+           email = "gilles.b.guillot@gmail.com",
+           comment = c(ORCID = "0000-0003-0675-8325"))
 Maintainer: Gilles Guillot <gilles.b.guillot@gmail.com>
 License: GPL (>= 3)
-Version: 0.0.3
+Version: 0.0.4
 Depends: RandomFields
 Encoding: UTF-8
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.0.9000
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
