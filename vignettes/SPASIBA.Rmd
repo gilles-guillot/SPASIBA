@@ -2,8 +2,8 @@
 title: "SPASIBA"
 subtitle: "Spatial continuous assignment from genetic data"
 author: "Gilles Guillot"
-date: "`r Sys.Date()`"
-abstract: This vignette provides information about the computer program SPASIBA, an R package for spatial continuous assignment from genetic data. 
+date: "`r Sys.time()`"
+abstract: This vignette provides information about the R package  SPASIBA for spatial continuous assignment from genetic data. It is a companion program to [Guillot et al. (2015). Accurate continuous geographic assignment from low-to high-density SNP data. Bioinformatics, 32(7), 1106-1108.](https://academic.oup.com/bioinformatics/article/32/7/1106/1744090).
 output:
   html_document:
     #highlight: kate
@@ -72,7 +72,7 @@ Assuming these matrices exist somewhere as plain text files on your disk, you ca
 The main function SPASIBA.inf return various objects stacked in a list. This includes a matrix of estimated coordinates for individuals of unknown geographic origin.
 
 ## On-line documentation
-Besides the present web page, users can find information about the various functions from the R on-line help,
+Besides the present document, users can find information about the various functions from the R on-line help,
 
 ` ?SPASIBA.inf`
 
@@ -80,38 +80,41 @@ Besides the present web page, users can find information about the various funct
 # Example
 
 ## Reading data from external files
-In the example below, the data are stored on a folder on the SPASIBA homepage. It can be also a folder on your local computer or anywhere else onthe web.
+
+The SPASIBA package comes with 5 R data objects that serve as examples of the format required: 
+`coord.ref`, `geno.ref`, `size.pop.ref`, `geno.unknown`, `true.coord.unknown`. 
+
 
 ```{r,eval=FALSE}
-## reading coordinates of reference populations
-coord.ref = read.table('https://i-pri.org/special/Biostatistics/Software/Spasiba/data/coord.ref.txt')
-
-
-# reading allele counts  of reference populations
-geno.ref = read.table('https://i-pri.org/special/Biostatistics/Software/Spasiba/data/geno.ref.txt')
-geno.ref = as.matrix(geno.ref) 
-
-# reading haploid reference population sizes 
-size.pop.ref = read.table('https://i-pri.org/special/Biostatistics/Software/Spasiba/data/size.pop.ref.txt')
-size.pop.ref = as.matrix(size.pop.ref)
-
-## reading genotypes of individuals of unknown geographic origin
-geno.unknown = read.table('https://i-pri.org/special/Biostatistics/Software/Spasiba/data/geno.unknown.txt')
-geno.unknown = as.matrix(geno.unknown)
-
-## reading true coordinates of individuals  assumed here to be of unknown geographic origin
-## if you have such a file you don't need the SPASIBA program!
-true.coord.unknown = read.table('https://i-pri.org/special/Biostatistics/Software/Spasiba/data/true.coord.unknown.txt')
+# ## reading coordinates of reference populations
+# coord.ref = read.table('https://i-pri.org/special/Biostatistics/Software/Spasiba/data/coord.ref.txt')
+# 
+# 
+# # reading allele counts  of reference populations
+# geno.ref = read.table('https://i-pri.org/special/Biostatistics/Software/Spasiba/data/geno.ref.txt')
+# geno.ref = as.matrix(geno.ref) 
+# 
+# # reading haploid reference population sizes 
+# size.pop.ref = read.table('https://i-pri.org/special/Biostatistics/Software/Spasiba/data/size.pop.ref.txt')
+# size.pop.ref = as.matrix(size.pop.ref)
+# 
+# ## reading genotypes of individuals of unknown geographic origin
+# geno.unknown = read.table('https://i-pri.org/special/Biostatistics/Software/Spasiba/data/geno.unknown.txt')
+# geno.unknown = as.matrix(geno.unknown)
+# 
+# ## reading true coordinates of individuals  assumed here to be of unknown geographic origin
+# ## if you have such a file you don't need the SPASIBA program!
+# true.coord.unknown = read.table('https://i-pri.org/special/Biostatistics/Software/Spasiba/data/true.coord.unknown.txt')
 ```
 
-You can check that the various data matrices have been loaded properly with head function, e.g.
+You can check  the various objects, e.g. by 
 
 ```{r,eval=FALSE}
 head(coord.ref[1:10,]) ## here inspecting 10 first lines only
 ```
 
 
-Making computations
+## Example of computations
 
 ```{r,eval=FALSE}
 ## loading the packages
