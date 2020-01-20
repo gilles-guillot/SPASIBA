@@ -46,20 +46,11 @@ install.packages('RandomFields')
 
 - To install SPASIBA: 
 
-* Download the file [SPASIBA_x.x.x.tar.gz](http://www2.imm.dtu.dk/~gigu/SPASIBA/SPASIBA_x.x.x.tar.gz) on your computer. 
 
-* Assuming below that the file SPASIBA_x.x.x.tar.gz is stored in a folder named Downloads in your home folder (but it can be anywhere else), open R and set Downloads as working directory for your R session. You can do so in the menu Session -> Set Working Directory 
-or by typing something along the line of: 
 ```
-setwd('/home/gilles/Downloads')
-```
-Now Downloads is the working directory for your current R session (the folder R will look at in the first place for data reading and writing).
-
-* Now type the line below in the R command-line: 
-
+install.packages('RandomFields')
 ``` 
-install.packages(pkgs='SPASIBA_x.x.x.tar.gz' , repos=NULL , type='source')
-```
+
 
 You can check that `SPASIBA` has been installed correctly by trying to load it:
 
