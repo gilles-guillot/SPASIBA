@@ -46,11 +46,9 @@ install.packages('RandomFields')
 
 - To install SPASIBA: 
 
-
 ```
-install.packages('RandomFields')
-``` 
-
+dev.tools::install_git_hub('gilles-guillot/SPASIBA')
+```
 
 You can check that `SPASIBA` has been installed correctly by trying to load it:
 
