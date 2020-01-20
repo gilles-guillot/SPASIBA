@@ -184,34 +184,11 @@ See [post on the Molecular Ecologist](http://www.molecularecologist.com/2012/09/
 ## References
 The model and algorithm underlying the SPASIBA program are described in 
 
-* G. Guillot, H. Jonsson, A. Hinge,  N. Manchih, L. Orlando *Accurate  geographic assignment 
- from low- to high-density SNP data*. Submitted. 
- 
- The INLA method and the SPDE-GMRF model are presented in 
- 
-* F. Lindgren, H. Rue, and E. Lindstr ̈m. An explicit link between Gaussian fields and Gaussian Markov random fields: the stochastic
-   partial differential equation approach. Journal of the Royal Statistical Society, series B, 73(4):423–498, 2011.
-
-* T. G. Martins, D. Simpson, F. Lindgren, and H. Rue. Bayesian computing with INLA : New features. Computational Statistics and
-   Data Analysis, 67:68–83, 2013.
-   
-* H. Rue, S. Martino, and N. Chopin. Approximate Bayesian inference for latent Gaussian models by using integrated nested Laplace
-approximations. Journal of the Royal Statistical Society, series B, 71(2):1–35, 2009.
-
-* H. Rue, S. Martino, F. Lindgren, D. Simpson, A. Riebler, and E. Krainski. INLA: Functions which allow to perform full Bayesian
-analysis of latent Gaussian models using Integrated Nested Laplace Approximaxion, 2014. http://www.r-inla.org/.
-
-* D. Simpson, F. Lindgren, and H. Rue. Think continuous : Markovian gaussian models in spatial statistic. Spatial Statistics, 1:16–29,
-
-
+* Guillot, Gilles, et al. "Accurate continuous geographic assignment from low-to high-density SNP data." Bioinformatics 32.7 (2015): 1106-1108.
 
  
+
  
-### Contact
-
-gilles.b.guillot [at] gmail.com
-
-
 
 
 --------------
